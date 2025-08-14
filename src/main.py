@@ -31,14 +31,14 @@ def settings_management():
 
         with st.container(horizontal=True, horizontal_alignment='left'):
             if st.button("Save Settings"):
-                with open("settings.json", "w") as f:
+                with open("../settings.json", "w") as f:
                     json.dump(st.session_state.settings, f, indent=2)
 
             if st.button("Set to Default Settings"):
-                with open("default_settings.json", "r") as f:
+                with open("../default_settings.json", "r") as f:
                     default_settings = json.load(f)
 
-                with open("settings.json", "w") as f:
+                with open("../settings.json", "w") as f:
                     json.dump(default_settings, f, indent=2)
                     st.session_state.settings = default_settings
                 st.rerun()
@@ -86,7 +86,7 @@ def display_result(result, time_taken):
 def main():
 
     if "settings" not in st.session_state:
-        with open("settings.json", "r") as file:
+        with open("../settings.json", "r") as file:
             st.session_state["settings"] = json.load(file)
 
     st.set_page_config("Transcribot", page_icon="🔉")
