@@ -18,7 +18,7 @@ def transcribe_audio(audio, model='turbo', language=None, initial_prompt=""):
     if language in ['en', 'english'] and model in ['tiny', 'base', 'small', 'medium']:
         model = model + '.en'
 
-    whisper_model = WhisperModel(model, download_root="../models/")
+    whisper_model = WhisperModel(model, download_root="models/")
     segments, info = whisper_model.transcribe(
         audio=audio, 
         word_timestamps=True, 
