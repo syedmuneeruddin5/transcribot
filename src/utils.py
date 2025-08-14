@@ -20,7 +20,7 @@ def transcribe_audio(audio, model='turbo', language=None, initial_prompt=""):
     if language in ['en', 'english'] and model in ['tiny', 'base', 'small', 'medium']:
         model = model + '.en'
 
-    whisper_model = WhisperModel(model, download_root="../models/")
+    whisper_model = WhisperModel(model, download_root="models/")
     segments, info = whisper_model.transcribe(
         audio=audio, 
         word_timestamps=True, 
@@ -70,7 +70,7 @@ def _generate_word_srt(segments):
 
 def delete_all_models(display_func):
 
-    models_path =  r"../models/"
+    models_path = r"models/"
     try:
         if os.path.exists(models_path):
             shutil.rmtree(models_path)
