@@ -1,7 +1,5 @@
 from faster_whisper import WhisperModel
 import warnings
-import os
-import shutil
 from rich.traceback import install
 
 install()
@@ -67,15 +65,4 @@ def _generate_word_srt(segments):
                 word_counter += 1
     
     return "\n\n".join(parts)
-
-def delete_all_models(display_func):
-
-    models_path =  r"../models/"
-    try:
-        if os.path.exists(models_path):
-            shutil.rmtree(models_path)
-            display_func("Successfully Deleted")
-
-    except:
-        display_func("Failed to Delete")
 
