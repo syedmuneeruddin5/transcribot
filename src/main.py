@@ -1,7 +1,6 @@
 import json
 import utils as ut
 import streamlit as st
-import pyperclip
 import os
 from time import perf_counter
 
@@ -56,7 +55,6 @@ def display_result(result, time_taken):
             rendered_text = lambda text, font_size_rem: f"<div style='font-size: {font_size_rem}rem; padding-top:1rem; padding-bottom:1rem;'>" + text.replace("\n", "<br>") + "</div>"
 
             with st.container(horizontal=True, horizontal_alignment='left'):
-                st.button("Copy", on_click=pyperclip.copy, args=[text], key=key + "_copy_button")
                 st.download_button(label=download_button_label, data=text.encode("utf-8"), file_name=download_file_name,
                                    mime=download_file_mime, icon=":material/download:", on_click="ignore",
                                    key=key + "_download_button")

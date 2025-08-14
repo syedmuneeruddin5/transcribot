@@ -2,4 +2,3 @@ faster-whisper
 hf_xet
 streamlit
 rich
-pyperclip
