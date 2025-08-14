@@ -2,6 +2,8 @@
 
 A powerful audio and video transcription tool that converts your media files to text using Faster-Whisper models. Built with a user-friendly Streamlit interface for seamless transcription workflows.
 
+**Try it here** 👉 [Transcribot](https://transcribot-muneer.streamlit.app/)
+
 ## 🌟 Features
 
 - **Multi-Format Support**: Transcribe audio (MP3, WAV, M4A) and video files (MP4, MOV, AVI, MKV)
